@@ -39969,7 +39969,26 @@ var _default = store; // you can export each part of redux state so you can use 
 // from each of the files all from here.
 
 exports.default = _default;
-},{"redux":"../node_modules/redux/es/redux.js","redux-logger":"../node_modules/redux-logger/dist/redux-logger.js","redux-thunk":"../node_modules/redux-thunk/es/index.js","redux-devtools-extension":"../node_modules/redux-devtools-extension/index.js","./user":"../client/store/user.js"}],"../client/app.js":[function(require,module,exports) {
+},{"redux":"../node_modules/redux/es/redux.js","redux-logger":"../node_modules/redux-logger/dist/redux-logger.js","redux-thunk":"../node_modules/redux-thunk/es/index.js","redux-devtools-extension":"../node_modules/redux-devtools-extension/index.js","./user":"../client/store/user.js"}],"../client/components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.Header = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header(props) {
+  return _react.default.createElement("div", null);
+};
+
+exports.Header = Header;
+var _default = Header;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../client/components/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39981,13 +40000,97 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var Footer = function Footer(props) {
+  return _react.default.createElement("div", null);
+};
+
+var _default = Footer;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../client/components/Projects.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.Projects = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Projects = function Projects(props) {
+  return _react.default.createElement("div", null);
+};
+
+exports.Projects = Projects;
+var _default = Projects;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../client/components/Skills.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.Skills = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Skills = function Skills(props) {
+  return _react.default.createElement("div", null);
+};
+
+exports.Skills = Skills;
+var _default = Skills;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../client/components/About.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var About = function About(props) {
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Artsy Artys employees"), _react.default.createElement("h3", null, "Randy Dobbins: Portfolio coming soon"));
+};
+
+var _default = About;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../client/App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Header = _interopRequireDefault(require("./components/Header"));
+
+var _Footer = _interopRequireDefault(require("./components/Footer"));
+
+var _Projects = _interopRequireDefault(require("./components/Projects"));
+
+var _Skills = _interopRequireDefault(require("./components/Skills"));
+
+var _About = _interopRequireDefault(require("./components/About"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var App = function App() {
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Hello world!"));
+  return _react.default.createElement("div", null, _react.default.createElement(_Header.default, null), _react.default.createElement(_About.default, null), _react.default.createElement(_Footer.default, null));
 };
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./components/Header":"../client/components/Header.js","./components/Footer":"../client/components/Footer.js","./components/Projects":"../client/components/Projects.js","./components/Skills":"../client/components/Skills.js","./components/About":"../client/components/About.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -40002,7 +40105,7 @@ var _history = _interopRequireDefault(require("../client/history"));
 
 var _store = _interopRequireDefault(require("../client/store"));
 
-var _app = _interopRequireDefault(require("../client/app"));
+var _App = _interopRequireDefault(require("../client/App"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40010,8 +40113,8 @@ _reactDom.default.render(_react.default.createElement(_reactRedux.Provider, {
   store: _store.default
 }, _react.default.createElement(_reactRouterDom.Router, {
   history: _history.default
-}, _react.default.createElement(_app.default, null))), document.getElementById('app'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../client/history":"../client/history.js","../client/store":"../client/store/index.js","../client/app":"../client/app.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}, _react.default.createElement(_App.default, null))), document.getElementById('app'));
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../client/history":"../client/history.js","../client/store":"../client/store/index.js","../client/App":"../client/App.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -40039,7 +40142,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43801" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43821" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
